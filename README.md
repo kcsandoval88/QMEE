@@ -3,6 +3,6 @@ REPO created for BIO708 (trial 2)
 
 Adding this line from RStudio
 
-Directories:
+Directories: Dates format (YYYY-MM-DD)
 
-1) Assignment 1 (work in progress)
+1) Assignment 1 (completed on 2024-01-18)
