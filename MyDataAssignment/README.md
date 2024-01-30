@@ -8,6 +8,10 @@ My data assignment (in progress)
   
   Step 4: Identify the type of sniff for each activity
   
+  Step 5: Separate sniffs by type of sniff "mutual" or "unidirectional"
+  
+  Step 6: Separate sniffs by sex "female" or "male"
+  
 Data file description:
 
   The csv file "SocialPhotometryData_RCAMP" contains the Raw data of experimental mice F69, H25, H28, H82.
