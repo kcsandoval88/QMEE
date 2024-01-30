@@ -12,6 +12,12 @@ My data assignment (in progress)
   
   Step 6: Separate sniffs by sex "female" or "male"
   
+  Step 7: Find the peak value for each column (either the highest-positive or lowest-negative point, the peak will be whichever has the heighest value). Then average +/- 5 points (a total of 6 values are averaged) = peak value
+  
+  Step 8: Add peak value + baseline correction value for each column => raw peak value
+  
+  Step 9: Run a t-test analysis comparing raw peak value to baseline correction (comparing sex, comparing type of sniff, comparing type of stimuli)
+  
   
 Data file description:
 
@@ -21,10 +27,11 @@ Data file description:
   
   - Each column depicts 1 sniff interaction from the experimental mouse to the stimulus mouse.
   
-  - Mice have different number of sniff activities (eg: F69 has 6 sniff activites, H25 has 5 sniff activites).
+  - Mice have different number of sniff activities (eg: F69 has 6 sniff activites, H25 has 5 sniff activites). [not identified in this csv]
   
   - In the data file I have also left the manual calculation I had done for the baseline correction value (step 1) and data corrected (step 2). [This can be used for confirmation or I can delete if unnecessary.]
   
+  - It also contains 2 sheets (familiar stimuli & unfamiliar stimuli)
   
   - The csv file "SocialPhotometry1st5SniffData_RCAMP" contains the data corrected of only the 1st 5 sniffs of experimental mice F69, H25, H28, H82.
   
