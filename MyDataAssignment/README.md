@@ -12,7 +12,7 @@ My data assignment (in progress)
   
   Step 6: Separate sniffs by sex "female" or "male"
   
-  Step 7: Find the peak value for each column (either the highest-positive or lowest-negative point, the peak will be whichever has the heighest value). Then average +/- 5 points (a total of 6 values are averaged) = peak value
+  Step 7: Find the peak value for each column (either the highest-positive or lowest-negative point, the peak will be whichever has the heighest value). Then average +/- 5 points (a total of 11 values are averaged) = peak value
   
   Step 8: Add peak value + baseline correction value for each column => raw peak value
   
