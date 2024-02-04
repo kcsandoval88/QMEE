@@ -47,6 +47,6 @@ The xlsx file "SocialPhotometry1st5SniffData_RCAMP"
   
 
 
-The xlsx file "PhotometryTracking"
+The xlsx file "PhotometryMetadata"
  
  - contains information about sex (male, female), type of sniff, and sniff direction (mutual, unidirectional)
