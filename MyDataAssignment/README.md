@@ -44,3 +44,9 @@ The xlsx file "SocialPhotometry1st5SniffData_RCAMP"
   - contains the data corrected of only the 1st 5 sniffs of experimental mice F69, H25, H28, H82.
   
   - In the 1st row, titles for each column include "mouseID-NumberOfTheSniff-TypeOfSniff" (eg: F69-3-AnoMutual => mouse id = F69, number of sniff = 3rd sniff activity, type of sniff = Ano mutual).
+  
+
+
+The xlsx file "PhotometryTracking"
+ 
+ - contains information about sex (male, female), type of sniff, and sniff direction (mutual, unidirectional)
