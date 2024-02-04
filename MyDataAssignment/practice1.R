@@ -38,3 +38,41 @@ for (col in columns_to_subtract) {
 # Print the modified data
 print(dd1)        
        #confirmed correct w/ previous manual calculations done (double yay!)
+
+# Graph my baseline corrected dataset
+library(ggplot2)
+library(tidyr)
+
+# Gather the data into long format
+dd1_long <- dd1 %>%
+  gather(key = "Column", value = "Value", -Time)
+
+# Create a line plot for all columns
+ggplot(dd1_long, aes(x = Time, y = Value, color = Column)) +
+  geom_line() +
+  labs(title = "Line Plot of Modified Measurements Over Time",
+       x = "Time",
+       y = "ZScore",
+       color = "Column") +
+  theme_minimal()
+
+#Graph only F69 mouse
+library(ggplot2)
+library(tidyr)
+
+# Gather the data into long format and filter the specified columns
+dd1_long <- dd1 %>%
+  gather(key = "Column", value = "Value", -Time)
+
+# Filter columns that start with "F69"
+dd1_filtered <- dd1_long %>%
+  filter(grepl("^F69", Column))
+
+# Create a line plot for columns starting with "F69"
+ggplot(dd1_filtered, aes(x = Time, y = Value, color = Column)) +
+  geom_line() +
+  labs(title = "Line Plot of Modified Measurements (F69) Over Time",
+       x = "Time",
+       y = "ZScore",
+       color = "Column") +
+  theme_minimal()
