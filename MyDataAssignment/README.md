@@ -1,8 +1,8 @@
 My data assignment (in progress)
 
-  Step 1: Calculate the average for each column from -10 to -5 seconds => baseline correction
+  Step 1: Calculate the average for each column from -10 to -5 seconds => baseline correction (completed on 2024-02-04)
   
-  Step 2: Deduct the baseline correction value to each value in a column, and for each column. => data corrected
+  Step 2: Deduct the baseline correction value to each value in a column, and for each column. => data corrected (completed on 2024-02-04)
   
   Step 3: Only select the 1st 5 activities for each mouse
   
