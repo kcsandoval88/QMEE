@@ -50,7 +50,7 @@ dd1_long <- dd1 %>%
 # Create a line plot for all columns
 ggplot(dd1_long, aes(x = Time, y = Value, color = Column)) +
   geom_line() +
-  labs(title = "Line Plot of Modified Measurements Over Time",
+  labs(title = "Calcium activity of oxytocin neurons during social interaction",
        x = "Time",
        y = "ZScore",
        color = "Column") +
@@ -71,7 +71,7 @@ dd1_filtered <- dd1_long %>%
 # Create a line plot for columns starting with "F69"
 ggplot(dd1_filtered, aes(x = Time, y = Value, color = Column)) +
   geom_line() +
-  labs(title = "Line Plot of Modified Measurements (F69) Over Time",
+  labs(title = "Calcium activity of oxytocin neurons during social interaction of mouse F69",
        x = "Time",
        y = "ZScore",
        color = "Column") +
