@@ -7,9 +7,9 @@ Directories: Dates format (YYYY-MM-DD)
 
 2) My data assignment (in progress)
 
-  Step 1: Calculate the average for each column from -10 to -5 seconds => baseline correction
+  (completed) Step 1: Calculate the average for each column from -10 to -5 seconds => baseline correction
   
-  Step 2: Deduct the baseline correction value to each value in a column, and for each column. => data corrected
+  (completed) Step 2: Deduct the baseline correction value to each value in a column, and for each column. => data corrected
   
   Step 3: Only select the 1st 5 activities for each mouse
   
