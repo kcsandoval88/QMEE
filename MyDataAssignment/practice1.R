@@ -1,12 +1,13 @@
 library(tidyverse)
-library(readxl)
+library(openxlsx)
 
+
+# Define a function to process each sheet
+process_sheet <- function(sheet_name) {
+  cat("\nProcessing sheet:", sheet_name, "\n")
+  
 ## run from head of the repository
-dd0 <- (read_excel("MyDataAssignment/SocialPhotometryData_RCAMP.xlsx"))
-
-## find first completely empty column (janitor package?)
-first_empty <- min(which(apply(is.na(dd0), 2, all)))
-dd0 <- dd0[,1:first_empty]
+  dd0 <- read.xlsx("MyDataAssignment/SocialPhotometryData_RCAMP.xlsx", sheet = sheet_name)
 
 #Exploring my data for practice
 glimpse(dd0) #shows data structure & dimension 
@@ -39,6 +40,10 @@ for (col in columns_to_subtract) {
 print(dd1)        
        #confirmed correct w/ previous manual calculations done (double yay!)
 
+
+# Save the modified data to a new excel file for further analysis
+write.xlsx(dd1, file = paste("Cleaned_", sheet_name, ".xlsx", sep = ""), rowNames = FALSE)
+
 # Graph my baseline corrected dataset
 library(ggplot2)
 library(tidyr)
@@ -55,6 +60,17 @@ ggplot(dd1_long, aes(x = Time, y = Value, color = Column)) +
        y = "ZScore",
        color = "Column") +
   theme_minimal()
+}
+
+# Specify the sheet names
+sheet_names <- c("RCAMP_FAM", "RCAMP_UNFAM")
+
+# Apply the process_sheet function to the specified sheets
+for (sheet_name in sheet_names) {
+  process_sheet(sheet_name)
+}
+
+
 
 #Graph only F69 mouse
 library(ggplot2)
