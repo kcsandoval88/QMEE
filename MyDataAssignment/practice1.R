@@ -52,6 +52,10 @@ library(tidyr)
 dd1_long <- dd1 %>%
   gather(key = "Column", value = "Value", -Time)
 
+# Filter columns that start with "F69" - code to graph only one mouse
+#dd1_filtered <- dd1_long %>%
+ # filter(grepl("^F69", Column))
+
 # Create a line plot for all columns
 ggplot(dd1_long, aes(x = Time, y = Value, color = Column)) +
   geom_line() +
@@ -69,26 +73,3 @@ sheet_names <- c("RCAMP_FAM", "RCAMP_UNFAM")
 for (sheet_name in sheet_names) {
   process_sheet(sheet_name)
 }
-
-
-
-#Graph only F69 mouse
-library(ggplot2)
-library(tidyr)
-
-# Gather the data into long format and filter the specified columns
-dd1_long <- dd1 %>%
-  gather(key = "Column", value = "Value", -Time)
-
-# Filter columns that start with "F69"
-dd1_filtered <- dd1_long %>%
-  filter(grepl("^F69", Column))
-
-# Create a line plot for columns starting with "F69"
-ggplot(dd1_filtered, aes(x = Time, y = Value, color = Column)) +
-  geom_line() +
-  labs(title = "Calcium activity of oxytocin neurons during social interaction of mouse F69",
-       x = "Time",
-       y = "ZScore",
-       color = "Column") +
-  theme_minimal()
