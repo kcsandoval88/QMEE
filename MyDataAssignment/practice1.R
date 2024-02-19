@@ -42,7 +42,7 @@ print(dd1)
 
 
 # Save the modified data to a new excel file for further analysis
-write.xlsx(dd1, file = paste("Modified_", sheet_name, ".xlsx", sep = ""), rowNames = FALSE)
+write.xlsx(dd1, file = paste("MyDataAssignment/Modified_", sheet_name, ".xlsx", sep = ""), rowNames = FALSE)
 
 # Graph my baseline corrected dataset
 library(ggplot2)
