@@ -23,25 +23,11 @@ addWorksheet(combined_file, sheetName = "RCAMP_UNFAM")
 writeData(combined_file, sheet = "RCAMP_UNFAM", cleaned_data_unfam)
 
 # Save the combined Excel file
-saveWorkbook(combined_file, file = "MyDataAssignment/Combined_RCAMP.xlsx", overwrite = TRUE)
+save_path <- "C:/PhD/QMEE/MyDataAssignment/Combined_RCAMP.xlsx"
+saveWorkbook(combined_file, file = save_path, overwrite = TRUE)
 
 
 
-# Define a function to process each sheet
-process_sheet <- function(sheet_name) {
-  cat("\nProcessing sheet:", sheet_name, "\n")
-  
-  ## run from head of the repository
-  dd0 <- read.xlsx("MyDataAssignment/Cleaned_RCAMP_FAM.xlsx", sheet = sheet_name)
-  
-  #Exploring my data for practice
-  glimpse(dd0) #shows data structure & dimension 
-  #dim(dd0) #dimension of my data
-  #str(dd0) #structure of data frame
-  names(dd0) #to know what variables I have in my data
-  #in this case I have time and the ID.sniffnumber for each column
-  
-  
 #Step3: only select the first 5 events
 dd2 <- dd1 %<%
   group_by(ID.sniffnumber) %>%
