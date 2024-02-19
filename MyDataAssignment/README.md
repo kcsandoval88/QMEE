@@ -4,7 +4,7 @@ My data assignment (in progress)
   
   (completed on 2024-02-04) Step 2: Deduct the baseline correction value to each value in a column, and for each column. => data corrected 
   
-  Step 3: Only select the 1st 5 activities for each mouse
+  (completed on 2024-02-19) Step 3: Only select the 1st 5 activities for each mouse
   
   Step 4: Identify the type of sniff for each activity
   
