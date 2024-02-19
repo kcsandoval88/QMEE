@@ -42,7 +42,7 @@ print(dd1)
 
 
 # Save the modified data to a new excel file for further analysis
-write.xlsx(dd1, file = paste("Cleaned_", sheet_name, ".xlsx", sep = ""), rowNames = FALSE)
+write.xlsx(dd1, file = paste("Modified_", sheet_name, ".xlsx", sep = ""), rowNames = FALSE)
 
 # Graph my baseline corrected dataset
 library(ggplot2)
@@ -73,3 +73,6 @@ sheet_names <- c("RCAMP_FAM", "RCAMP_UNFAM")
 for (sheet_name in sheet_names) {
   process_sheet(sheet_name)
 }
+
+
+#next step in a different R script
