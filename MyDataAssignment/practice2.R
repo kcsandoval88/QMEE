@@ -7,7 +7,7 @@ process_sheet <- function(sheet_name) {
   cat("\nProcessing sheet:", sheet_name, "\n")
   
   # Read the combined data
-dd2 <- read.xlsx("MyDataAssignment/Combined_RCAMP.xlsx", sheet = sheet_name)
+dd2 <- read.xlsx("MyDataAssignment/Cleaned_RCAMP.xlsx", sheet = sheet_name)
 
 dd3 <- dd2 %>%
   gather(key = "Column", value = "Value", -Time) %>%
@@ -56,5 +56,8 @@ addWorksheet(combined_file, sheetName = "RCAMP_UNFAM")
 writeData(combined_file, sheet = "RCAMP_UNFAM", first5_data_unfam)
 
 # Save the combined Excel file
-save_path <- "C:/PhD/QMEE/MyDataAssignment/first5Combined_RCAMP.xlsx"
+save_path <- "C:/PhD/QMEE/MyDataAssignment/first5_RCAMP.xlsx"
 saveWorkbook(combined_file, file = save_path, overwrite = TRUE)
+
+# Delete the separate files
+unlink(c(file_path_fam, file_path_unfam))
