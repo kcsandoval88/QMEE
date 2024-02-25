@@ -28,12 +28,15 @@ print(gg1)
 ### BMB: might want to split processing step here (write out intermediate results to a .RDS file)
 
 get_avg_max <- function(time, value) {
-    max_time <- which.max(value) ## should we worry about possibly repeated max values? probably not
-    min_time <- max(1,max_time-5)
-    max_time <- min(length(time),max_time+5)
+    ## highest positive *or* lowest negative value
+    max_time <- which.max(abs(value))        ## should we worry about possibly repeated max values? probably not
+    min_time <- max(1,max_time-5)            ## beginning of time series or max time-5, whichever is later
+    max_time <- min(length(time),max_time+5) ## end or max_time+5
     avg <- mean(value[min_time:max_time])
     return(avg)
 }
+
+## Step 7 of README processing flows
     
 d_avgmax <- (d01
     ## could drop Notes (redundant), but good for cross-checking
@@ -42,7 +45,7 @@ d_avgmax <- (d01
     |> summarise(avg_max = get_avg_max(Time, value), .groups = "drop")
 )
 
-## now we have averaged values
+## now we have the desired averaged values
 gg1 <- (ggplot(d_avgmax, aes(Type_Sniff, avg_max))
     + geom_point(aes(colour=Type_Stim, shape = Sniff_Direction), size =5)
     + facet_wrap(~Sex)
